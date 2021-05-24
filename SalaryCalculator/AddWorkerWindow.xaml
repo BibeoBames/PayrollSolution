@@ -1,0 +1,49 @@
+﻿<Window x:Class="SalaryCalculator.AddWorkerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalaryCalculator"
+        mc:Ignorable="d"
+        Title="AddWorkerWindow" Height="354" Width="404">
+    <Grid>
+        <Grid  Height="23" Margin="20,30,20,0" VerticalAlignment="Top">
+            <TextBox x:Name="FullnameTextBox" HorizontalAlignment="Right"  Height="23" Margin="0" TextWrapping="Wrap" ToolTip="Логин" VerticalAlignment="Top" Width="235"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ф.И.О*" Margin="2,4,0,3"/>
+        </Grid>
+        <Grid  Height="23" Margin="20,60,20,0" VerticalAlignment="Top">
+            <DatePicker x:Name="HiringDatePicker"  HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top" Width="235"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Дата выхода*" Margin="2,4,0,3"/>
+        </Grid>
+        <Grid  Height="23" Margin="20,90,19.6,0" VerticalAlignment="Top">
+            <TextBox x:Name="EmailTextBox" HorizontalAlignment="Right"  Height="23" Margin="0" TextWrapping="Wrap" ToolTip="Логин" VerticalAlignment="Top" Width="235"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Email*" Margin="2,4,0,3"/>
+        </Grid>
+        <Grid  Height="23" Margin="20,120,19.6,0" VerticalAlignment="Top">
+            <TextBox x:Name="PasswordTextBox" HorizontalAlignment="Right"  Height="23" Margin="0" TextWrapping="Wrap" ToolTip="Логин" VerticalAlignment="Top" Width="235"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Margin="2,4,0,3"><Run Text="П"/><Run Text="ароль"/><Run Text="*"/></TextBlock>
+        </Grid>
+        <Grid  Height="23" Margin="20,150,19.6,0" VerticalAlignment="Top">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Должность*" Margin="2,4,0,3"/>
+            <ComboBox x:Name="PositionComboBox" ItemsSource="{Binding PositionList}" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top" Width="235"/>
+        </Grid>
+        <Grid  Height="23" Margin="20,180,19.6,0" VerticalAlignment="Top">
+            <TextBox x:Name="ManagerTextBox" HorizontalAlignment="Right"  Height="23" Margin="0" TextWrapping="Wrap" ToolTip="Логин" VerticalAlignment="Top" Width="235"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ф.И.О Руководителя" Margin="2,4,0,3"/>
+        </Grid>
+        <Grid  Height="23" Margin="20,210,19.6,0" VerticalAlignment="Top">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Доступ*" Margin="2,4,0,3"/>
+            <ComboBox x:Name="AccessComboBox" ItemsSource="{Binding AccessList}" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top" Width="235"/>
+        </Grid>
+        <Grid  Height="23" Margin="20,240,19.6,0" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="SalaryTextBox" HorizontalAlignment="Right"  Height="23" Margin="0" TextWrapping="Wrap" ToolTip="Логин" VerticalAlignment="Top" Width="235" Grid.RowSpan="2"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Зарплата*" Margin="2,4,0,2" Grid.RowSpan="2"/>
+        </Grid>
+        <Button Content="Принять" HorizontalAlignment="Left" Margin="20,0,0,15" VerticalAlignment="Bottom" Width="76" Height="25" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,0,20,20" TextWrapping="Wrap" Text="* Обязательные к заполнению поля" VerticalAlignment="Bottom" Width="230"/>
+    </Grid>
+</Window>
